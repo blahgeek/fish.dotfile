@@ -11,7 +11,7 @@ alias net_class="~/Documents/projects/net_class/net_class.py --path ~/Documents/
 alias mypasswd="python2 /Users/BlahGeek/Documents/projects/mypasswd/mypasswd.py"
 alias pandoc="pandoc --latex-engine=xelatex -V mainfont=SimSun"
 alias mtr="mtr -t"
-alias ll="ls -alh"
+alias ll="ls -alh@"
 
 set -x EDITOR vim
 set -x PATH ~/.local/bin /usr/local/bin /usr/local/sbin $PATH
