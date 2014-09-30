@@ -3,6 +3,8 @@
 . ~/.config/fish/virtualfish/auto_activation.fish
 . ~/.config/fish/virtualfish/global_requirements.fish
 
+. ~/.config/fish/color.fish
+
 alias vi="vim"
 alias du="du -h"
 alias df="df -h"
