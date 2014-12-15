@@ -9,16 +9,12 @@ function isatap
         echo "Previous gif0 destroyed"
     end
 
-    set LOCAL_IP (sudo ifconfig en0 | grep inet | grep -v inet6 | awk '{print $2}')
     if test (count $argv) = 0
         set PUBLIC_IP (curl ifconfig.me)
-    else 
-        if test $argv = public
-            set PUBLIC_IP $LOCAL_IP
-        else
-            set PUBLIC_IP $argv
-        end
+    else
+        set PUBLIC_IP $argv
     end
+    set LOCAL_IP (sudo ifconfig en0 | grep inet | grep -v inet6 | awk '{print $2}')
 
     echo "Public IP: $PUBLIC_IP, Local IP: $LOCAL_IP"
 

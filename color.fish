@@ -36,7 +36,7 @@ set -g fish_color_escape      $cyan
 set -g fish_color_hostname    $cyan
 set -g fish_color_cwd         $yellow
 set -g fish_color_git         $green
-set -g fish_colot_ssh         $orange
+set -g fish_color_ssh         $red
 
 if test "$TERM" = "linux"
     echo -en "\e]PB839496" # S_base00
