@@ -15,29 +15,28 @@ set -l blue    "blue"
 set -l cyan    "cyan"
 set -l green   "green"
 
-set fish_color_autosuggestion d0d0d0
-set fish_color_command 005fd7\x1epurple
-set fish_color_comment red
-set fish_color_cwd 1c1c1c
-set fish_color_cwd_root red
-set fish_color_error 870000\x1e\x2d\x2dbold
-set fish_color_escape 87afff
-set fish_color_history_current 5f5fff
-set fish_color_host \x2do\x1ecyan
-set fish_color_match 5f5fff
-set fish_color_normal 000000
-set fish_color_operator 5f5fff
-set fish_color_param 000000
-set fish_color_quote brown
-set fish_color_redirection normal
-set fish_color_search_match \x2d\x2dbackground\x3dpurple
-set fish_color_status red
-set fish_color_user \x2do\x1egreen
-set fish_color_valid_path \x2d\x2dunderline
-set fish_pager_color_completion normal
-set fish_pager_color_description 555\x1eyellow
-set fish_pager_color_prefix cyan
-set fish_pager_color_progress cyan
+# Used by fish's completion; see
+# http://fishshell.com/docs/2.0/index.html#variables-color
+
+set -g fish_color_normal      $base0
+set -g fish_color_command     $blue
+set -g fish_color_quote       $cyan
+set -g fish_color_redirection $green
+set -g fish_color_end         $base0
+set -g fish_color_error       $red
+set -g fish_color_param       $base0
+set -g fish_color_comment     $base01
+set -g fish_color_match       $cyan
+set -g fish_color_search_match "--background=$base02"
+set -g fish_color_operator    $orange
+set -g fish_color_escape      $cyan
+
+# Used by fish_prompt
+
+set -g fish_color_hostname    $cyan
+set -g fish_color_cwd         $yellow
+set -g fish_color_git         $green
+set -g fish_colot_ssh         $orange
 
 if test "$TERM" = "linux"
     echo -en "\e]PB839496" # S_base00
