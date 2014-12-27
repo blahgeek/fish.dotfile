@@ -1,4 +1,6 @@
-. ~/.config/fish/autojump.fish
+if test -f /usr/local/etc/autojump.fish
+    . /usr/local/etc/autojump.fish
+end
 . ~/.config/fish/virtualfish/virtual.fish
 . ~/.config/fish/virtualfish/auto_activation.fish
 . ~/.config/fish/virtualfish/global_requirements.fish
