@@ -1,5 +1,9 @@
 if test -f /usr/local/etc/autojump.fish
     . /usr/local/etc/autojump.fish
+else
+    if test -f /etc/profile.d/autojump.fish
+        . /etc/profile.d/autojump.fish
+    end
 end
 . ~/.config/fish/virtualfish/virtual.fish
 . ~/.config/fish/virtualfish/auto_activation.fish
