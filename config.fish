@@ -1,5 +1,5 @@
-if test -f /usr/local/etc/autojump.fish
-    . /usr/local/etc/autojump.fish
+if test -f /usr/local/share/autojump/autojump.fish
+    . /usr/local/share/autojump/autojump.fish
 else
     if test -f /etc/profile.d/autojump.fish
         . /etc/profile.d/autojump.fish

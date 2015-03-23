@@ -15,7 +15,7 @@ function fish_greeting --description 'Fish greeting~'
     end
     if type fortune >/dev/null ^/dev/null
         echo
-        fortune -a
+        fortune -a -s
         echo
     end
 end
