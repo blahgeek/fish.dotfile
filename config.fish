@@ -11,6 +11,12 @@ end
 
 . ~/.config/fish/color.fish
 
+set -g __fish_git_prompt_show_informative_status 1
+set -g ___fish_git_prompt_char_cleanstate "✓"
+set -g ___fish_git_prompt_char_dirtystate "+"
+set -g ___fish_git_prompt_char_invalidstate "×"
+set -g ___fish_git_prompt_char_stagedstate "∙"
+
 alias vi="vim"
 alias du="du -h"
 alias df="df -h"
@@ -47,8 +53,3 @@ function mkproject
     and ssh node0.blahgeek.com "git init --bare /home/blahgeek/projects.git/$argv[1].git"
 end
 
-#if test $TERM != "screen"
-#    exec tmux
-#end
-
-#set fish_greeting \n "    / \__         Here goes the "(set_color blue)"Fish"(set_color normal)\n"    (    @\___   / "\n"   /         O   "\n"  /   (_____/    "\n" /_____/   U     "\n \n
