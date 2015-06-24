@@ -28,8 +28,10 @@ alias mtr="mtr -t"
 alias ll="ls -alh"
 alias yoink="open -a Yoink"
 
+set -x GOPATH "$HOME/.golang"
+
 set -x EDITOR vim
-set -x PATH ~/.local/bin /usr/local/bin /usr/local/sbin $PATH
+set -x PATH ~/.local/bin /usr/local/bin /usr/local/sbin $GOPATH/bin $PATH
 
 set -x PIP_USE_WHEEL "true"
 set -x PIP_WHEEL_DIR "$HOME/.pip/wheels"
