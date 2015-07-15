@@ -37,4 +37,4 @@ function mkcd
     mkdir $argv; and cd $argv
 end
 
-source ~/.config/fish/.iterm2_shell_integration.fish
+source ~/.config/fish/iterm2_shell_integration.fish
