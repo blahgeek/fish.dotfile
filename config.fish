@@ -33,25 +33,8 @@ set -x GOPATH "$HOME/.golang"
 set -x EDITOR vim
 set -x PATH ~/.local/bin /usr/local/bin /usr/local/sbin $GOPATH/bin $PATH
 
-set -x PIP_USE_WHEEL "true"
-set -x PIP_WHEEL_DIR "$HOME/.pip/wheels"
-set -x PIP_FIND_LINKS "$HOME/.pip/wheels"
-set -x PIP_DOWNLOAD_CACHE "$HOME/.pip/cache"
-
 function mkcd
     mkdir $argv; and cd $argv
 end
 
-function mkproject
-    cd /Users/BlahGeek/Documents/projects
-    if test -d $argv[1]
-        echo "Dir exists"
-        return
-    end
-    mkcd $argv
-    and git init
-    and git remote add server "ssh://node0.blahgeek.com/home/blahgeek/projects.git/$argv[1].git"
-    and echo "init done, creating dir on remote"
-    and ssh node0.blahgeek.com "git init --bare /home/blahgeek/projects.git/$argv[1].git"
-end
-
+source ~/.config/fish/.iterm2_shell_integration.fish
