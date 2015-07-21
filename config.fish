@@ -18,7 +18,9 @@ set -g ___fish_git_prompt_char_invalidstate "×"
 set -g ___fish_git_prompt_char_stagedstate "∙"
 
 if test (echo $FISH_VERSION | sed 's/\.//g') -lt 220
-    echo 'Warning: fish version < 2.2.0, using alias instead of abbr'
+    if test -t 0
+        echo 'Warning: fish version < 2.2.0, using alias instead of abbr'
+    end
     alias abbr=alias
 end
 
@@ -43,4 +45,6 @@ function mkcd
     mkdir $argv; and cd $argv
 end
 
-source ~/.config/fish/iterm2_shell_integration.fish
+if test -t 0
+    source ~/.config/fish/iterm2_shell_integration.fish
+end
