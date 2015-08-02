@@ -5,6 +5,11 @@ else
         source /etc/profile.d/autojump.fish
     end
 end
+
+if python2 -m virtualfish > /dev/null ^/dev/null
+    eval (python2 -m virtualfish auto_activation global_requirements)
+end
+
 source ~/.config/fish/virtualfish/virtual.fish
 source ~/.config/fish/virtualfish/auto_activation.fish
 source ~/.config/fish/virtualfish/global_requirements.fish
