@@ -6,10 +6,6 @@ else
     end
 end
 
-if python2 -m virtualfish > /dev/null ^/dev/null
-    eval (python2 -m virtualfish auto_activation global_requirements)
-end
-
 source ~/.config/fish/virtualfish/virtual.fish
 source ~/.config/fish/virtualfish/auto_activation.fish
 source ~/.config/fish/virtualfish/global_requirements.fish
@@ -50,6 +46,11 @@ function mkcd
     mkdir $argv; and cd $argv
 end
 
+if python2 -m virtualfish > /dev/null ^/dev/null
+    eval (python2 -m virtualfish auto_activation global_requirements)
+end
+
 if test -t 0
     source ~/.config/fish/iterm2_shell_integration.fish
 end
+
