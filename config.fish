@@ -50,7 +50,5 @@ if python2 -m virtualfish > /dev/null ^/dev/null
     eval (python2 -m virtualfish auto_activation global_requirements)
 end
 
-if test -t 0
-    source ~/.config/fish/iterm2_shell_integration.fish
-end
+source ~/.config/fish/iterm2_shell_integration.fish
 
