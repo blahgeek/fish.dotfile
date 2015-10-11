@@ -35,7 +35,7 @@ abbr ll="ls -alh"
 abbr yoink="open -a Yoink"
 alias net_class="~/Documents/projects/net_class/net_class.py --path ~/Documents/网络学堂 --size_limit 10000000"
 alias mypasswd="python2 /Users/BlahGeek/Documents/projects/mypasswd/mypasswd.py"
-alias pandoc="pandoc --latex-engine=xelatex -V mainfont=SimSun --template=/Users/BlahGeek/.local/share/pandoc/pm-template.latex"
+alias pandoc="pandoc --latex-engine=xelatex --template=/Users/BlahGeek/.local/share/pandoc/pm-template.latex"
 
 set -x GOPATH "$HOME/.golang"
 
