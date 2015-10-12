@@ -6,10 +6,6 @@ else
     end
 end
 
-source ~/.config/fish/virtualfish/virtual.fish
-source ~/.config/fish/virtualfish/auto_activation.fish
-source ~/.config/fish/virtualfish/global_requirements.fish
-
 source ~/.config/fish/color.fish
 
 set -g __fish_git_prompt_show_informative_status 1
