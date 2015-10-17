@@ -14,7 +14,7 @@ set -g ___fish_git_prompt_char_dirtystate "+"
 set -g ___fish_git_prompt_char_invalidstate "×"
 set -g ___fish_git_prompt_char_stagedstate "∙"
 
-if test (echo $FISH_VERSION | sed 's/\.//g') -lt 220
+if test (echo $FISH_VERSION | sed 's/\.//g' | sed 's/-.*//g' ) -lt 220
     if test -t 0
         echo 'Warning: fish version < 2.2.0, using alias instead of abbr'
     end
