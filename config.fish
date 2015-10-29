@@ -21,14 +21,14 @@ if test (echo $FISH_VERSION | sed 's/\.//g' | sed 's/-.*//g' ) -lt 220
     alias abbr=alias
 end
 
-abbr "!"="sudo"
 abbr vi="vim"
 abbr du="du -h"
 abbr df="df -h"
 abbr x="dtrx -r -n"
 abbr mtr="mtr -t"
 abbr ll="ls -alh"
-abbr yoink="open -a Yoink"
+alias yoink="open -a Yoink"
+alias lb="open -a launchBar"
 alias net_class="~/Documents/projects/net_class/net_class.py --path ~/Documents/网络学堂 --size_limit 10000000"
 alias mypasswd="python2 /Users/BlahGeek/Documents/projects/mypasswd/mypasswd.py"
 alias pandoc="pandoc --latex-engine=xelatex --template=/Users/BlahGeek/.local/share/pandoc/pm-template.latex"
@@ -45,6 +45,4 @@ end
 if python2 -m virtualfish > /dev/null ^/dev/null
     eval (python2 -m virtualfish auto_activation global_requirements)
 end
-
-source ~/.config/fish/iterm2_shell_integration.fish
 
