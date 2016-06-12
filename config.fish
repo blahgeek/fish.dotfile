@@ -35,6 +35,10 @@ alias mypasswd="python2 /Users/BlahGeek/Documents/projects/mypasswd/mypasswd.py"
 alias pandoc="pandoc --latex-engine=xelatex --template=/Users/BlahGeek/.local/share/pandoc/pm-template.latex"
 
 set -x GOPATH "$HOME/.golang"
+function gopath_here --description "Append (pwd) to GOPATH"
+    set -x GOPATH "$HOME/.golang":(pwd)
+    echo "GOPATH: " "$GOPATH"
+end
 
 set -x EDITOR vim
 set -x PATH ~/.local/bin /usr/local/bin /usr/local/sbin $GOPATH/bin $PATH
