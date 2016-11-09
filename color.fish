@@ -1,19 +1,20 @@
-set -l base03  "--bold black"
-set -l base02  "black"
-set -l base01  "--bold green"
-set -l base00  "--bold yellow"
-set -l base0   "--bold blue"
-set -l base1   "--bold cyan"
-set -l base2   "white"
-set -l base3   "--bold white"
-set -l yellow  "yellow"
-set -l orange  "--bold red"
-set -l red     "red"
-set -l magenta "magenta"
-set -l violet  "--bold magenta"
-set -l blue    "blue"
-set -l cyan    "cyan"
 set -l green   "green"
+set -l base03  --bold black
+set -l base02  black
+set -l base01  brgreen
+set -l base00  bryellow
+set -l base0   brblue
+set -l base1   brcyan
+set -l base2   white
+set -l base3   --bold white
+set -l yellow  yellow
+set -l orange  brred
+set -l red     red
+set -l magenta magenta
+set -l violet  brmagenta
+set -l blue    blue
+set -l cyan    cyan
+set -l green   green
 
 # set -g solarized_background_highlight (set_color --background=white)
 
