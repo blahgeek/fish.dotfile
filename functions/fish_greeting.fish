@@ -1,4 +1,12 @@
 function fish_greeting --description 'Fish greeting~'
+    if type archey3 > /dev/null ^/dev/null
+        archey3
+        return
+    end
+    if type archey > /dev/null ^/dev/null
+        archey
+        return
+    end
     echo
     if type uname > /dev/null ^/dev/null
         echo "Machine:  " (uname -prs)
