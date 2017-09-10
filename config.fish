@@ -14,18 +14,12 @@ set -g ___fish_git_prompt_char_dirtystate "+"
 set -g ___fish_git_prompt_char_invalidstate "×"
 set -g ___fish_git_prompt_char_stagedstate "∙"
 
-if test (echo $FISH_VERSION | sed 's/\.//g' | sed 's/-.*//g' ) -lt 220
-    if test -t 0
-        echo 'Warning: fish version < 2.2.0, using alias instead of abbr'
-    end
-    alias abbr=alias
-end
-
 abbr vi="vim"
 abbr du="du -h"
 abbr df="df -h"
 abbr x="dtrx -r -n"
 abbr ll="ls -alh"
+alias xclip="xclip -selection clipboard -r"
 alias mypasswd="python2 ~/Documents/projects/mypasswd/mypasswd.py"
 alias pandoc="pandoc --latex-engine=xelatex --template=/Users/BlahGeek/.local/share/pandoc/pm-template.latex"
 
@@ -36,7 +30,8 @@ function gopath_here --description "Append (pwd) to GOPATH"
 end
 
 set -x EDITOR vim
-set -x PATH ~/.local/bin /usr/local/bin /usr/local/sbin $GOPATH/bin $PATH
+set -x PARALLEL_SHELL /bin/sh
+set -x PATH ~/.local/bin /usr/local/bin /usr/local/sbin $GOPATH/bin ~/.npm/bin $PATH
 
 function mkcd
     mkdir $argv; and cd $argv
