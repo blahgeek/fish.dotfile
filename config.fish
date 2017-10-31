@@ -9,7 +9,7 @@ end
 source ~/.config/fish/color.fish
 
 set -g __fish_git_prompt_show_informative_status 1
-set -g ___fish_git_prompt_char_cleanstate "✓"
+set -g ___fish_git_prompt_char_cleanstate "="
 set -g ___fish_git_prompt_char_dirtystate "+"
 set -g ___fish_git_prompt_char_invalidstate "×"
 set -g ___fish_git_prompt_char_stagedstate "∙"
