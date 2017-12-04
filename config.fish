@@ -37,6 +37,11 @@ function mkcd
     mkdir $argv; and cd $argv
 end
 
-if python -m virtualfish > /dev/null ^/dev/null
-    eval (python -m virtualfish auto_activation global_requirements)
+function vf
+    if python -m virtualfish > /dev/null ^/dev/null
+        eval (python -m virtualfish auto_activation global_requirements)
+        echo "Virtualfish just initialized, pls re-run this command"
+    else
+        echo "Virtualfish not found"
+    end
 end
