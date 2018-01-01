@@ -14,7 +14,8 @@ set -g ___fish_git_prompt_char_dirtystate "+"
 set -g ___fish_git_prompt_char_invalidstate "×"
 set -g ___fish_git_prompt_char_stagedstate "∙"
 
-abbr vi="vim"
+abbr vi="nvim"
+abbr vim="nvim"
 abbr du="du -h"
 abbr df="df -h"
 abbr x="dtrx -r -n"
@@ -29,9 +30,10 @@ function gopath_here --description "Append (pwd) to GOPATH"
     echo "GOPATH: " "$GOPATH"
 end
 
-set -x EDITOR vim
+set -x EDITOR nvim
 set -x PARALLEL_SHELL /bin/sh
-set -x PATH ~/.local/bin /usr/local/bin /usr/local/sbin $GOPATH/bin ~/.npm/bin $PATH
+set -x PATH ~/.local/bin /usr/lib/ccache/bin/ /usr/local/bin /usr/local/sbin $GOPATH/bin ~/.npm/bin $PATH
+set -x MANPAGER "nvim -c 'set ft=man' -"
 
 function mkcd
     mkdir $argv; and cd $argv
@@ -44,4 +46,9 @@ function vf
     else
         echo "Virtualfish not found"
     end
+end
+
+function nvim
+    printf "\033]50;%s\a" "Font=Fira Code" # for konsole
+    command nvim $argv
 end
