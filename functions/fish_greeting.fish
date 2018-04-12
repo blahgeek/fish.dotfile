@@ -1,6 +1,6 @@
 function fish_greeting --description 'Fish greeting~'
 
-    fish_konsole_update
+    fish_appearance_update
 
     if type archey3 > /dev/null ^/dev/null
         archey3

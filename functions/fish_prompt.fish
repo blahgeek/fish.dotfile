@@ -2,7 +2,7 @@ function fish_prompt --description 'Write out the prompt'
 
     set -l last_status $status
 
-    fish_konsole_update
+    fish_appearance_update
 
     # Just calculate these once, to save a few cycles when displaying the prompt
     if not set -q __fish_prompt_hostname
