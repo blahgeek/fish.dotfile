@@ -2,6 +2,17 @@ function fish_prompt --description 'Write out the prompt'
 
     set -l last_status $status
 
+    fish_sunwait_update
+    set -l konsole_profiles "Font=Fira Mono"
+
+    if test "$SUNWAIT_STATUS" = "DAY"
+        set konsole_profiles "$konsole_profiles;ColorScheme=SolarizedLight"
+    else
+        set konsole_profiles "$konsole_profiles;ColorScheme=Solarized"
+    end
+
+    printf "\033]50;%s\a" "$konsole_profiles"
+
     # Just calculate these once, to save a few cycles when displaying the prompt
     if not set -q __fish_prompt_hostname
         set -g __fish_prompt_hostname (hostname|cut -d . -f 1)
@@ -22,6 +33,4 @@ function fish_prompt --description 'Write out the prompt'
         echo -n -s (set_color $fish_color_error) "[$last_status]"
     end
     echo -n -s (set_color $fish_color_normal) "> "
-
-    printf "\033]50;%s\a" "Font=Fira Mono" # for konsole
 end
