@@ -32,7 +32,7 @@ end
 
 set -x EDITOR nvim
 set -x PARALLEL_SHELL /bin/sh
-set -x PATH ~/.local/bin /usr/lib/ccache/bin/ /usr/local/bin /usr/local/sbin $GOPATH/bin ~/.npm/bin $PATH
+set -x PATH ~/.cargo/bin ~/.local/bin /usr/local/bin /usr/local/sbin $GOPATH/bin ~/.npm/bin $PATH
 set -x MANPAGER "nvim -c 'set ft=man' -"
 
 function mkcd
@@ -46,9 +46,4 @@ function vf
     else
         echo "Virtualfish not found"
     end
-end
-
-function nvim
-    printf "\033]50;%s\a" "Font=Fira Code" # for konsole
-    command nvim $argv
 end
