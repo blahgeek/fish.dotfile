@@ -30,10 +30,23 @@ function gopath_here --description "Append (pwd) to GOPATH"
     echo "GOPATH: " "$GOPATH"
 end
 
+function _prepend_path --description "Prepend directory to PATH if valid"
+    set dir $argv[1]
+    if test -d $dir
+        set -x PATH $dir $PATH
+    end
+end
+
 set -x EDITOR nvim
 set -x PARALLEL_SHELL /bin/sh
-set -x PATH ~/.cargo/bin ~/.local/bin /usr/local/bin /usr/local/sbin $GOPATH/bin ~/.npm/bin $PATH
 set -x MANPAGER "nvim -c 'set ft=man' -"
+
+_prepend_path ~/.npm/bin
+_prepend_path $GOPATH/bin
+_prepend_path /opt/local/bin
+_prepend_path ~/.local/bin
+_prepend_path ~/Library/Python/2.7/bin
+_prepend_path ~/Library/Python/3.6/bin
 
 function mkcd
     mkdir $argv; and cd $argv
