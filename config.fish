@@ -20,8 +20,6 @@ abbr du="du -h"
 abbr df="df -h"
 abbr x="dtrx -r -n"
 abbr ll="ls -alh"
-alias xclip="xclip -selection clipboard -r"
-alias pandoc="pandoc --latex-engine=xelatex --template=/Users/BlahGeek/.local/share/pandoc/pm-template.latex"
 
 set -x GOPATH "$HOME/.golang"
 function gopath_here --description "Append (pwd) to GOPATH"
