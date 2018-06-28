@@ -1,5 +1,5 @@
-if test -f /opt/local/share/autojump/autojump.fish
-    source /opt/local/share/autojump/autojump.fish
+if test -f /usr/local/share/autojump/autojump.fish
+    source /usr/local/share/autojump/autojump.fish
 else
     if test -f /usr/share/autojump/autojump.fish
         source /usr/share/autojump/autojump.fish
@@ -42,6 +42,8 @@ _prepend_path ~/.npm/bin
 _prepend_path $GOPATH/bin
 _prepend_path /opt/local/bin
 _prepend_path /opt/local/sbin
+_prepend_path /usr/local/bin
+_prepend_path /usr/local/sbin
 _prepend_path ~/.local/bin
 _prepend_path ~/Library/Python/2.7/bin
 _prepend_path ~/Library/Python/3.6/bin
