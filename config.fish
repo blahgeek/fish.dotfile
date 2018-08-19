@@ -1,3 +1,11 @@
+# On Vim (not neovim) terminal mode
+if test -n "$VIM_TERMINAL"
+    set -e -x VIM_TERMINAL
+    set -e -x VIMRUNTIME
+    set -e -x VIM
+    set -e -x MYVIMRC
+end
+
 if test -f /usr/local/share/autojump/autojump.fish
     source /usr/local/share/autojump/autojump.fish
 else
@@ -21,9 +29,9 @@ abbr df="df -h"
 abbr x="dtrx -r -n"
 abbr ll="ls -alh"
 
-set -x GOPATH "$HOME/.golang"
+set -x GOPATH "$HOME/Code/GO"
 function gopath_here --description "Append (pwd) to GOPATH"
-    set -x GOPATH "$HOME/.golang":(pwd)
+    set -x GOPATH "$HOME/Code/GO":(pwd)
     echo "GOPATH: " "$GOPATH"
 end
 
@@ -34,6 +42,8 @@ function _prepend_path --description "Prepend directory to PATH if valid"
     end
 end
 
+set -x LC_CTYPE UTF-8
+set -x LANG en_US
 set -x EDITOR nvim
 set -x PARALLEL_SHELL /bin/sh
 set -x MANPAGER "nvim -c 'set ft=man' -"
