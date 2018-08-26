@@ -1,9 +1,11 @@
 # On Vim (not neovim) terminal mode
 if test -n "$VIM_TERMINAL"
     set -e -x VIM_TERMINAL
+    set -e -x VIM_SERVERNAME
     set -e -x VIMRUNTIME
     set -e -x VIM
     set -e -x MYVIMRC
+    set -e -x NVIM_LISTEN_ADDRESS
 end
 
 if test -f /usr/local/share/autojump/autojump.fish
