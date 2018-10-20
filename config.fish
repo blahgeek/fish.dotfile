@@ -64,11 +64,11 @@ function mkcd
     mkdir $argv; and cd $argv
 end
 
-function vf
-    if python -m virtualfish > /dev/null ^/dev/null
-        eval (python -m virtualfish auto_activation global_requirements)
-        echo "Virtualfish just initialized, pls re-run this command"
-    else
-        echo "Virtualfish not found"
-    end
-end
+# virtualfish
+# Running `python -m virtualfish auto_activation global_requirements` is slow
+set -g VIRTUALFISH_VERSION 1.0.6
+set -g VIRTUALFISH_PYTHON_EXEC /usr/local/opt/python@2/bin/python2.7
+source /usr/local/lib/python2.7/site-packages/virtualfish/virtual.fish
+source /usr/local/lib/python2.7/site-packages/virtualfish/auto_activation.fish
+source /usr/local/lib/python2.7/site-packages/virtualfish/global_requirements.fish
+emit virtualfish_did_setup_plugins
