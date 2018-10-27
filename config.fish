@@ -44,8 +44,6 @@ function _prepend_path --description "Prepend directory to PATH if valid"
     end
 end
 
-set -x LC_CTYPE UTF-8
-set -x LANG en_US
 set -x EDITOR nvim
 set -x PARALLEL_SHELL /bin/sh
 set -x MANPAGER "nvim -c 'set ft=man' -"
