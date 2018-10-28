@@ -22,4 +22,5 @@ function fish_prompt --description 'Write out the prompt'
         echo -n -s (set_color $fish_color_error) "[$last_status]"
     end
     echo -n -s (set_color $fish_color_normal) "> "
+    printf "\033]50;Font=Fira Mono\a"
 end
