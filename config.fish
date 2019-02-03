@@ -24,15 +24,15 @@ set -g ___fish_git_prompt_char_dirtystate "+"
 set -g ___fish_git_prompt_char_invalidstate "×"
 set -g ___fish_git_prompt_char_stagedstate "∙"
 
-abbr vi="nvim"
-abbr vim="nvim"
-abbr du="du -h"
-abbr df="df -h"
-abbr x="dtrx -r -n"
-abbr ll="ls -alh"
+abbr vi "nvim"
+abbr vim "nvim"
+abbr du "du -h"
+abbr df "df -h"
+abbr x "dtrx -r -n"
+abbr ll "ls -alh"
 if type -q xclip
-    abbr pbpaste="xclip -selection clipboard -o"
-    abbr pbcopy="xclip -selection clipboard"
+    abbr pbpaste "xclip -selection clipboard -o"
+    abbr pbcopy "xclip -selection clipboard"
 end
 
 set -x GOPATH "$HOME/Code/GO"
@@ -58,6 +58,8 @@ _prepend_path /opt/local/bin
 _prepend_path /opt/local/sbin
 _prepend_path /usr/local/bin
 _prepend_path /usr/local/sbin
+_prepend_path ~/Library/Android/sdk/platform-tools
+_prepend_path ~/Library/Android/sdk/ndk-bundle
 _prepend_path ~/.local/bin
 _prepend_path ~/Library/Python/2.7/bin
 _prepend_path ~/Library/Python/3.6/bin
@@ -68,3 +70,6 @@ end
 
 # virtualfish
 eval (python -m virtualfish auto_activation global_requirements)
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
