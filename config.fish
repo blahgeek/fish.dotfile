@@ -1,11 +1,11 @@
 # On Vim (not neovim) terminal mode
 if test -n "$VIM_TERMINAL"
-    set -e -x VIM_TERMINAL
-    set -e -x VIM_SERVERNAME
-    set -e -x VIMRUNTIME
-    set -e -x VIM
-    set -e -x MYVIMRC
-    set -e -x NVIM_LISTEN_ADDRESS
+    set -e VIM_TERMINAL
+    set -e VIM_SERVERNAME
+    set -e VIMRUNTIME
+    set -e VIM
+    set -e MYVIMRC
+    set -e NVIM_LISTEN_ADDRESS
 end
 
 if test -f /usr/local/share/autojump/autojump.fish
@@ -61,8 +61,10 @@ _prepend_path /usr/local/sbin
 _prepend_path ~/Library/Android/sdk/platform-tools
 _prepend_path ~/Library/Android/sdk/ndk-bundle
 _prepend_path ~/.local/bin
+_prepend_path /usr/local/opt/ruby/bin
 _prepend_path ~/Library/Python/2.7/bin
 _prepend_path ~/Library/Python/3.6/bin
+_prepend_path /usr/local/opt/sqlite/bin
 
 function mkcd
     mkdir $argv; and cd $argv
@@ -70,6 +72,8 @@ end
 
 # virtualfish
 eval (python -m virtualfish auto_activation global_requirements)
+test -e /usr/libexec/java_home; and setjdk 1.8
 
-test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
-
+if test "$TERM_PROGRAM" = "iTerm.app"
+    test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+end

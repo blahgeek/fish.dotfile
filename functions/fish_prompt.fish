@@ -1,6 +1,7 @@
 function fish_prompt --description 'Write out the prompt'
 
     set -l last_status $status
+    set -l jobs (count (jobs))
 
     # Just calculate these once, to save a few cycles when displaying the prompt
     if not set -q __fish_prompt_hostname
@@ -13,6 +14,10 @@ function fish_prompt --description 'Write out the prompt'
 
     if set -q VIRTUAL_ENV
         echo -n -s (set_color $fish_color_venv) "(" (basename "$VIRTUAL_ENV") ")" (set_color $fish_color_normal) " "
+    end
+
+    if test $jobs -ne 0
+        echo -n -s (set_color $fish_color_jobs) "[J:$jobs]" (set_color $fish_color_normal) " "
     end
 
     echo -n -s (set_color $fish_color_hostname) "$__fish_prompt_hostname" ' '

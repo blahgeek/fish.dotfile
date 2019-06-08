@@ -59,4 +59,5 @@ set -g fish_color_cwd         $yellow
 set -g fish_color_git         $green
 set -g fish_color_ssh         $red
 set -g fish_color_venv        $blue
+set -g fish_color_jobs        $blue
 
