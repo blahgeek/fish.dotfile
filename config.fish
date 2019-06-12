@@ -74,6 +74,12 @@ end
 eval (python -m virtualfish auto_activation global_requirements)
 test -e /usr/libexec/java_home; and setjdk 1.8
 
+# GPG
+if type -q gpgconf
+    gpgconf --launch gpg-agent
+    set -gx SSH_AUTH_SOCK "$HOME/.gnupg/S.gpg-agent.ssh"
+end
+
 if test "$TERM_PROGRAM" = "iTerm.app"
     test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 end
