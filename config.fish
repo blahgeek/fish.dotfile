@@ -60,11 +60,9 @@ _prepend_path /usr/local/bin
 _prepend_path /usr/local/sbin
 _prepend_path ~/Library/Android/sdk/platform-tools
 _prepend_path ~/Library/Android/sdk/ndk-bundle
-_prepend_path ~/.local/bin
 _prepend_path /usr/local/opt/ruby/bin
-_prepend_path ~/Library/Python/2.7/bin
-_prepend_path ~/Library/Python/3.6/bin
-_prepend_path /usr/local/opt/sqlite/bin
+_prepend_path ~/.local/bin
+_prepend_path ~/.config/fish/bin
 
 function mkcd
     mkdir $argv; and cd $argv
