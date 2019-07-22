@@ -64,6 +64,10 @@ _prepend_path /usr/local/opt/ruby/bin
 _prepend_path ~/.local/bin
 _prepend_path ~/.config/fish/bin
 
+# fzf
+set -x FZF_DEFAULT_COMMAND 'ag -g ""'
+set -x FZF_CTRL_T_COMMAND 'ag -g ""'
+
 function mkcd
     mkdir $argv; and cd $argv
 end
