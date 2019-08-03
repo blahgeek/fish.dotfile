@@ -1,5 +1,6 @@
 function _fish_git_prompt_custom
-    if test -f ./.fish_git_prompt_skip
+    set -l gitdir (git rev-parse --show-toplevel || echo ".")
+    if test -f "$gitdir"/.fish_git_prompt_skip
         echo " (?)"
     else
         __fish_git_prompt
