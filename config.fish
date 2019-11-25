@@ -65,8 +65,8 @@ _prepend_path ~/.local/bin
 _prepend_path ~/.config/fish/bin
 
 # fzf
-set -x FZF_DEFAULT_COMMAND 'ag -g ""'
-set -x FZF_CTRL_T_COMMAND 'ag -g ""'
+set -x FZF_CTRL_T_COMMAND 'fd --type file "" (realpath --relative-to=. (git rev-parse --show-toplevel 2> /dev/null || echo .))'
+set -x FZF_DEFAULT_COMMAND "$FZF_CTRL_T_COMMAND"
 
 function mkcd
     mkdir $argv; and cd $argv
