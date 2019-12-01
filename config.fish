@@ -30,6 +30,7 @@ abbr du "du -h"
 abbr df "df -h"
 abbr x "dtrx -r -n"
 abbr ll "ls -alh"
+abbr sxiv "sxiv -a"  # autoplay gif
 if type -q xclip
     abbr pbpaste "xclip -selection clipboard -o"
     abbr pbcopy "xclip -selection clipboard"
