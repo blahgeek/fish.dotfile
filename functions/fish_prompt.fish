@@ -17,6 +17,10 @@ function fish_prompt --description 'Write out the prompt'
         set -g __fish_prompt_hostname (hostname|cut -d . -f 1)
     end
 
+    if test "$INSIDE_EMACS" = "vterm"
+        emacs_vterm_printf '51;A'$USER'@'$__fish_prompt_hostname':'$PWD
+    end
+
     if set -q SSH_CONNECTION
         echo -n -s (set_color $fish_color_ssh) "[SSH]" (set_color $fish_color_normal) " "
     end

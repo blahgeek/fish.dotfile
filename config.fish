@@ -24,8 +24,13 @@ set -g ___fish_git_prompt_char_dirtystate "+"
 set -g ___fish_git_prompt_char_invalidstate "×"
 set -g ___fish_git_prompt_char_stagedstate "∙"
 
-abbr vi "nvim"
-abbr vim "nvim"
+if test "$INSIDE_EMACS" = "vterm"
+    abbr vi emacs-find-file
+    abbr vim emacs-find-file
+else
+    abbr vi "nvim"
+    abbr vim "nvim"
+end
 abbr du "du -h"
 abbr df "df -h"
 abbr x "dtrx -r -n"
@@ -51,7 +56,9 @@ end
 
 set -x EDITOR nvim
 set -x PARALLEL_SHELL /bin/sh
-set -x MANPAGER "nvim -c 'set ft=man' -"
+if not set -q INSIDE_EMACS
+    set -x MANPAGER "nvim -c 'set ft=man' -"
+end
 
 _prepend_path ~/.npm/bin
 _prepend_path $GOPATH/bin
