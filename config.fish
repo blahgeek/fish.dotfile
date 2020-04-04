@@ -25,11 +25,11 @@ set -g ___fish_git_prompt_char_invalidstate "×"
 set -g ___fish_git_prompt_char_stagedstate "∙"
 
 if test "$INSIDE_EMACS" = "vterm"
-    abbr vi emacs-find-file
-    abbr vim emacs-find-file
+    abbr -g vi emacs-find-file
+    abbr -g vim emacs-find-file
 else
-    abbr vi "nvim"
-    abbr vim "nvim"
+    abbr -g vi "nvim"
+    abbr -g vim "nvim"
 end
 abbr du "du -h"
 abbr df "df -h"
