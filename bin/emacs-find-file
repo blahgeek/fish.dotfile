@@ -32,8 +32,16 @@ vterm_cmd() {
     fi
 }
 
+realpath_or_original() {
+    if [[ "$1" = /* ]]; then
+        echo "$1"
+    else
+        realpath "$1"
+    fi
+}
+
 # https://github.com/akermu/emacs-libvterm/issues/283
-OUTSTR="$(vterm_cmd find-file "$(realpath "$@")")"
+OUTSTR="$(vterm_cmd find-file "$(realpath_or_original "$@")")"
 echo "$OUTSTR"
 
 # vterm_cmd find-file "$(realpath "$@")"
