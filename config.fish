@@ -27,6 +27,7 @@ set -g ___fish_git_prompt_char_stagedstate "∙"
 if test "$INSIDE_EMACS" = "vterm"
     abbr -g vi emacs-find-file
     abbr -g vim emacs-find-file
+    abbr -g man emacs-man
 else
     abbr -g vi "nvim"
     abbr -g vim "nvim"
@@ -58,6 +59,8 @@ set -x EDITOR nvim
 set -x PARALLEL_SHELL /bin/sh
 if not set -q INSIDE_EMACS
     set -x MANPAGER "nvim -c 'set ft=man' -"
+else
+    set -e MANPAGER
 end
 
 _prepend_path ~/.npm/bin
