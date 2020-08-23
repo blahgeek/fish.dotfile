@@ -55,8 +55,11 @@ function _prepend_path --description "Prepend directory to PATH if valid"
     end
 end
 
-set -x EDITOR nvim
 set -x PARALLEL_SHELL /bin/sh
+if test -z "$EDITOR"
+    set -x EDITOR nvim
+end
+
 if not set -q INSIDE_EMACS
     set -x MANPAGER "nvim -c 'set ft=man' -"
 else
