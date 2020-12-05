@@ -86,8 +86,6 @@ function mkcd
     mkdir $argv; and cd $argv
 end
 
-# virtualfish
-eval (python -m virtualfish auto_activation global_requirements)
 test -e /usr/libexec/java_home; and setjdk 1.8
 
 # GPG
