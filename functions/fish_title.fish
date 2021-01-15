@@ -3,6 +3,6 @@
 function fish_title
     # emacs (except vterm) cannot handle this
     if test "$INSIDE_EMACS" = "vterm" -o -z "$INSIDE_EMACS"
-        echo (status current-command) (prompt_pwd)
+        echo (status current-command) (smart_pwd)
     end
 end
