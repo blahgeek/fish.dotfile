@@ -18,7 +18,14 @@ function fish_prompt --description 'Write out the prompt'
     end
 
     if test "$INSIDE_EMACS" = "vterm"
-        emacs_vterm_printf '51;A'$USER'@'$__fish_prompt_hostname':'$PWD
+        if set -q SSH_CONNECTION
+            set -l ssh_connection_arr (string split ' ' $SSH_CONNECTION)
+            set -l ssh_host "$ssh_connection_arr[3]"
+            set -l ssh_port "$ssh_connection_arr[4]"
+            emacs_vterm_cmd set-pwd "/ssh:"$USER"@"$ssh_host"#"$ssh_port":"$PWD
+        else
+            emacs_vterm_cmd set-pwd $PWD
+        end
     end
 
     if set -q SSH_CONNECTION

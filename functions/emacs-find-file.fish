@@ -6,5 +6,5 @@ function emacs-find-file -d "Find file inside emacs"
     end
 
     echo "Finding file $filename"
-    emacs-vterm-cmd find-file "$filename"
+    emacs_vterm_cmd find-file "$filename"
 end
