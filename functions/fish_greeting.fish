@@ -19,7 +19,7 @@ function fish_greeting --description 'Fish greeting~'
     end
     if type df > /dev/null ^/dev/null
         echo
-        df -hl | grep --color=never "^/dev/"
+        df -hl | grep --color=never "^/dev/" | grep -v "/snap"
     end
     if type fortune >/dev/null ^/dev/null
         echo
