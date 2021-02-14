@@ -22,19 +22,23 @@ vterm_cmd() {
     vterm_printf "51;E$vterm_elisp"
 }
 
-vterm_prompt_end(){
+tramp_host_prefix(){
     if [ -n "$SSH_CONNECTION" ]; then
         SSH_CONNECTION_ARRAY=(${SSH_CONNECTION})
         SSH_HOST=${SSH_CONNECTION_ARRAY[2]}
         SSH_PORT=${SSH_CONNECTION_ARRAY[3]}
-        vterm_cmd set-pwd "/ssh:${USER}@${SSH_HOST}#${SSH_PORT}:$PWD"
+        echo "/ssh:${USER}@${SSH_HOST}#${SSH_PORT}:"
     else
-        vterm_cmd set-pwd "$PWD"
+        echo ""
     fi
 }
 
+vterm_prompt_end(){
+    vterm_cmd set-pwd "$(tramp_host_prefix)$PWD"
+}
+
 vterm_find_file(){
-    FILENAME="$(realpath "$1")"
+    FILENAME="$(tramp_host_prefix)$(realpath "$1")"
 
     read -p "Opening $FILENAME using emacs find-file, continue? " -n 1 -r
     echo
