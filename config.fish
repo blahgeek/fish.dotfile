@@ -37,11 +37,13 @@ abbr df "df -h"
 abbr x "dtrx -r -n"
 abbr ll "ls -alh"
 abbr sxiv "sxiv -a"  # autoplay gif
+abbr ssh "sshrc"
 if type -q xclip
     abbr pbpaste "xclip -selection clipboard -o"
     abbr pbcopy "xclip -selection clipboard"
 end
 
+set -x SSHHOME ~/.config/fish/sshrc/
 set -x GOPATH "$HOME/Code/GO"
 function gopath_here --description "Append (pwd) to GOPATH"
     set -x GOPATH "$HOME/Code/GO":(pwd)
