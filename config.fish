@@ -93,7 +93,7 @@ test -e /usr/libexec/java_home; and setjdk 1.8
 # GPG
 if type -q gpgconf
     gpgconf --launch gpg-agent
-    set -gx SSH_AUTH_SOCK "$HOME/.gnupg/S.gpg-agent.ssh"
+    set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 end
 
 if test "$TERM_PROGRAM" = "iTerm.app"
