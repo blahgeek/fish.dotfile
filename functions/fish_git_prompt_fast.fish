@@ -39,7 +39,7 @@ function fish_git_prompt_fast
 
     # this would make gitstatus.sh faster (default=all)
     set -x __GIT_PROMPT_SHOW_UNTRACKED_FILES normal
-    set _GIT_STATUS (gitstatus.sh)
+    set _GIT_STATUS (gitstatus.sh 2> /dev/null)
     set __CURRENT_GIT_STATUS $_GIT_STATUS
 
     set __CURRENT_GIT_STATUS_PARAM_COUNT (count $__CURRENT_GIT_STATUS)
