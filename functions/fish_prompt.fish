@@ -3,7 +3,7 @@ function _fish_git_prompt_custom
     if test -f "$gitdir"/.fish_git_prompt_skip
         echo " (?)"
     else
-        __fish_git_prompt
+        fish_git_prompt_fast
     end
 end
 
