@@ -46,6 +46,10 @@ function fish_git_prompt_fast
 
     if not test "0" -eq $__CURRENT_GIT_STATUS_PARAM_COUNT
         set GIT_BRANCH $__CURRENT_GIT_STATUS[1]
+        # change yikai_branch_name to branch_name. for pony
+        # TODO: {$USER} does not work here
+        set GIT_BRANCH (string replace -r "^yikai_" "" "$GIT_BRANCH")
+
         set GIT_REMOTE "$__CURRENT_GIT_STATUS[2]"
         if contains "." "$GIT_REMOTE"; or contains "_NO_REMOTE_TRACKING_" "$GIT_REMOTE"
             set -e GIT_REMOTE
