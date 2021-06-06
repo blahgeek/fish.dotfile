@@ -42,6 +42,7 @@ if type -q xclip
     abbr pbpaste "xclip -selection clipboard -o"
     abbr pbcopy "xclip -selection clipboard"
 end
+bind \cx edit_command_buffer
 
 set -x SSHHOME ~/.config/fish/sshrc/
 set -x GOPATH "$HOME/Code/GO"
