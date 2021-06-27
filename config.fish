@@ -28,6 +28,7 @@ if test "$INSIDE_EMACS" = "vterm"
     abbr -g vi emacs-find-file
     abbr -g vim emacs-find-file
     abbr -g man emacs-man
+    abbr -g gits emacs-magit-status
 else
     abbr -g vi "nvim"
     abbr -g vim "nvim"
