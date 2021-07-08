@@ -5,7 +5,10 @@ function emacs-find-file -d "Find file inside emacs"
         set filename (realpath $filename)
     end
 
-    if set -q SSH_CONNECTION
+    if not test -r $filename
+        set filename "/sudo::"$filename
+        read -P "File is not readable, try opening $filename. Continue?"
+    else if set -q SSH_CONNECTION
         set -l ssh_connection_arr (string split ' ' $SSH_CONNECTION)
         set -l ssh_host "$ssh_connection_arr[3]"
         set -l ssh_port "$ssh_connection_arr[4]"
